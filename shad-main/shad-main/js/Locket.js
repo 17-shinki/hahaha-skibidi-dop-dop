@@ -6,9 +6,9 @@ const options = {
     url: "https://api.revenuecat.com/v1/product_entitlement_mapping",
     headers: {
       'Authorization': request.headers["authorization"],
-      'X-Platform': 'iOS',
-      'User-Agent': request.headers["user-agent"],
-      'X-Logged-Out': 'false' // Thêm header để xử lý trạng thái đăng xuất
+        'X-Platform': 'iOS',
+        'User-Agent': request.headers["user-agent"],
+        'X-Logged-Out': 'true' // Thay đổi thành true để duy trì Gold badge sau khi đăng xuất
     }
 }
 $httpClient.get(options, function(error, newResponse, data){
@@ -22,12 +22,14 @@ $httpClient.get(options, function(error, newResponse, data){
     "request_date_ms": Date.now(),
     "request_date": new Date().toISOString(),
     "subscriber": {
-      "entitlements": {
+    "entitlements": {
         "Gold": {
           "grace_period_expires_date": null,
           "purchase_date": new Date().toISOString(),
-          "product_identifier": "com.locket.premium.yearly",
-          "expires_date": "2099-12-31T01:01:01Z"
+          "product_identifier": "com.locket.premium.yearly", 
+          "expires_date": "2099-12-31T01:01:01Z",
+          "is_sandbox": false,
+          "ownership_type": "PURCHASED"
         }
       },
       "first_seen": new Date().toISOString(),
