@@ -8,7 +8,7 @@ const options = {
       'Authorization': request.headers["authorization"],
         'X-Platform': 'iOS',
         'User-Agent': request.headers["user-agent"],
-        'X-Logged-Out': 'true' // Thay đổi thành true để duy trì Gold badge sau khi đăng xuất
+'X-Logged-Out': 'false' // Thay đổi thành false để luôn hiển thị Gold badge
     }
 }
 $httpClient.get(options, function(error, newResponse, data){
