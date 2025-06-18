@@ -15,15 +15,14 @@ $httpClient.get(options, function(error, newResponse, data){
 const ent = JSON.parse(data);
 let jsonToUpdate = {
         "request_date_ms": 1704070861000,
-        "request_date": "2007-09-08T01:01:01Z",
+        "request_date": "2024-07-26T01:01:01Z",
         "subscriber": {
             "entitlements": {
                 "Gold": {
                     "grace_period_expires_date": null,
-                    "purchase_date": "2007-09-08T01:01:01Z", 
+                    "purchase_date": "2024-07-26T01:01:01Z", 
                     "product_identifier": "com.locket.premium.yearly",
-                    "expires_date": "2099-12-31T01:01:01Z",
-                    "auto_resume_date": null
+                    "expires_date": "2099-12-31T01:01:01Z"
                 }
             },
             "first_seen": "2024-07-26T01:01:01Z",
